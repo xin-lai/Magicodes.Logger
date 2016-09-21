@@ -21,9 +21,9 @@ using System.Resources;
 // 与程序集关联的信息。
 
 [assembly: AssemblyTitle("Magicodes.Logger")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Magicodes日志基础组件")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("湖南心莱信息科技有限公司")]
 [assembly: AssemblyProduct("Magicodes.Logger")]
 [assembly: AssemblyCopyright("版权所有(C)  2016")]
 [assembly: AssemblyTrademark("")]
