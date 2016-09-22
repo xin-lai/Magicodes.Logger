@@ -28,7 +28,7 @@ namespace Magicodes.Logger
         ///     新建日志记录器
         /// </summary>
         /// <param name="name">日志记录器名称</param>
-        public LoggerBase(string name)
+        protected LoggerBase(string name)
         {
             Name = name;
         }
@@ -55,7 +55,7 @@ namespace Magicodes.Logger
             var e = new LogEventArgs
             {
                 Exception = ex,
-                loggerLevels = loggerLevels,
+                LoggerLevels = loggerLevels,
                 Message = message
             };
             OnLog(null, e);

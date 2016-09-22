@@ -20,7 +20,7 @@ namespace Magicodes.Logger
     public class LogEventArgs
     {
         public Exception Exception { get; set; }
-        public LoggerLevels loggerLevels { get; set; }
+        public LoggerLevels LoggerLevels { get; set; }
         public object Message { get; set; }
     }
 }
