@@ -26,22 +26,55 @@ namespace Magicodes.Logger.DebugLogger
 
         public override void Log(LoggerLevels loggerLevels, object message)
         {
+            SetForegroundColor(loggerLevels);
+
             Console.WriteLine("Name:{2};Level:{0};Msg:{1};", loggerLevels, message, Name);
+        }
+
+        private static void SetForegroundColor(LoggerLevels loggerLevels)
+        {
+            switch (loggerLevels)
+            {
+                case LoggerLevels.Trace:
+                case LoggerLevels.Debug:
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+                case LoggerLevels.Info:
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    break;
+                case LoggerLevels.Warn:
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    break;
+                case LoggerLevels.Error:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
+                case LoggerLevels.Fatal:
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    break;
+                default:
+                    break;
+            }
         }
 
         public override void Log(LoggerLevels loggerLevels, object message, Exception exception)
         {
+            SetForegroundColor(loggerLevels);
+
             Console.WriteLine("Name:{3};Level:{0};Msg:{1};Ex:{2}", loggerLevels, message, exception, Name);
         }
 
         public override void LogFormat(LoggerLevels loggerLevels, string format, params object[] args)
         {
+            SetForegroundColor(loggerLevels);
+
             Console.WriteLine("Name:{2};Level:{0};Msg:{1}", loggerLevels, string.Format(format, args), Name);
         }
 
         public override void LogFormat(LoggerLevels loggerLevels, string format, Exception exception,
             params object[] args)
         {
+            SetForegroundColor(loggerLevels);
+
             Console.WriteLine("Name:{3};Level:{0};Msg:{1};Ex:{2}", loggerLevels, string.Format(format, args), exception,
                 Name);
         }
@@ -49,6 +82,8 @@ namespace Magicodes.Logger.DebugLogger
         public override void LogFormat(LoggerLevels loggerLevels, IFormatProvider formatProvider, string format,
             params object[] args)
         {
+            SetForegroundColor(loggerLevels);
+
             var msg = string.Format(formatProvider, format, args);
             Console.WriteLine("Name:{2};Level:{0};Msg:{1}", loggerLevels, msg, Name);
         }
@@ -57,6 +92,8 @@ namespace Magicodes.Logger.DebugLogger
             Exception exception,
             params object[] args)
         {
+            SetForegroundColor(loggerLevels);
+
             var msg = string.Format(formatProvider, format, args);
             Console.WriteLine("Name:{3};Level:{0};Msg:{1};Ex:{2}", loggerLevels, msg, exception, Name);
         }
