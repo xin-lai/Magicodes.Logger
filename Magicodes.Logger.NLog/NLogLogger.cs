@@ -101,34 +101,34 @@ namespace Magicodes.Logger.NLog
         ///     记录日志
         /// </summary>
         /// <param name="loggerLevels">日志级别</param>
-        /// <param name="format">格式化字符串</param>
+        /// <param name="message">格式化字符串</param>
         /// <param name="args">参数</param>
-        public override void LogFormat(LoggerLevels loggerLevels, string format, params object[] args)
+        public override void LogFormat(LoggerLevels loggerLevels, string message, params object[] args)
         {
             switch (loggerLevels)
             {
                 case LoggerLevels.Trace:
-                    _logger.Trace(format, args);
+                    _logger.Trace(message, args);
                     break;
                 case LoggerLevels.Debug:
-                    _logger.Debug(format, args);
+                    _logger.Debug(message, args);
                     break;
                 case LoggerLevels.Info:
-                    _logger.Info(format, args);
+                    _logger.Info(message, args);
                     break;
                 case LoggerLevels.Warn:
-                    _logger.Warn(format, args);
+                    _logger.Warn(message, args);
                     break;
                 case LoggerLevels.Error:
-                    _logger.Error(format, args);
+                    _logger.Error(message, args);
                     break;
                 case LoggerLevels.Fatal:
-                    _logger.Fatal(format, args);
+                    _logger.Fatal(message, args);
                     break;
                 default:
                     break;
             }
-            ExcutedOnLog(loggerLevels, string.Format(format, args));
+            ExcutedOnLog(loggerLevels, message, args: args);
         }
 
         /// <summary>
@@ -136,71 +136,71 @@ namespace Magicodes.Logger.NLog
         /// </summary>
         /// <param name="loggerLevels">日志级别</param>
         /// <param name="formatProvider">格式化提供程序</param>
-        /// <param name="format">格式化字符串</param>
+        /// <param name="message">格式化字符串</param>
         /// <param name="args">参数</param>
-        public override void LogFormat(LoggerLevels loggerLevels, IFormatProvider formatProvider, string format,
+        public override void LogFormat(LoggerLevels loggerLevels, IFormatProvider formatProvider, string message,
             params object[] args)
         {
             switch (loggerLevels)
             {
                 case LoggerLevels.Trace:
-                    _logger.Trace(formatProvider, format, args);
+                    _logger.Trace(formatProvider, message, args);
                     break;
                 case LoggerLevels.Debug:
-                    _logger.Debug(formatProvider, format, args);
+                    _logger.Debug(formatProvider, message, args);
                     break;
                 case LoggerLevels.Info:
-                    _logger.Info(formatProvider, format, args);
+                    _logger.Info(formatProvider, message, args);
                     break;
                 case LoggerLevels.Warn:
-                    _logger.Warn(formatProvider, format, args);
+                    _logger.Warn(formatProvider, message, args);
                     break;
                 case LoggerLevels.Error:
-                    _logger.Error(formatProvider, format, args);
+                    _logger.Error(formatProvider, message, args);
                     break;
                 case LoggerLevels.Fatal:
-                    _logger.Fatal(formatProvider, format, args);
+                    _logger.Fatal(formatProvider, message, args);
                     break;
                 default:
                     break;
             }
-            ExcutedOnLog(loggerLevels, string.Format(formatProvider, format, args));
+            ExcutedOnLog(loggerLevels, message, args: args);
         }
 
         /// <summary>
         ///     记录日志
         /// </summary>
         /// <param name="loggerLevels">日志级别</param>
-        /// <param name="format">格式化字符串</param>
+        /// <param name="message">格式化字符串</param>
         /// <param name="exception">异常信息</param>
         /// <param name="args">参数</param>
-        public override void LogFormat(LoggerLevels loggerLevels, string format, Exception exception,
+        public override void LogFormat(LoggerLevels loggerLevels, string message, Exception exception,
             params object[] args)
         {
             switch (loggerLevels)
             {
                 case LoggerLevels.Trace:
-                    _logger.Trace(exception, format, args);
+                    _logger.Trace(exception, message, args);
                     break;
                 case LoggerLevels.Debug:
-                    _logger.Debug(exception, format, args);
+                    _logger.Debug(exception, message, args);
                     break;
                 case LoggerLevels.Info:
-                    _logger.Info(exception, format, args);
+                    _logger.Info(exception, message, args);
                     break;
                 case LoggerLevels.Warn:
-                    _logger.Warn(exception, format, args);
+                    _logger.Warn(exception, message, args);
                     break;
                 case LoggerLevels.Error:
-                    _logger.Error(exception, format, args);
+                    _logger.Error(exception, message, args);
                     break;
                 case LoggerLevels.Fatal:
-                    _logger.Fatal(exception, format, args);
+                    _logger.Fatal(exception, message, args);
                     break;
                 default:
                     break;
             }
-            ExcutedOnLog(loggerLevels, string.Format(format, args), exception);
+            ExcutedOnLog(loggerLevels, message, args: args,ex: exception);
         }
 
         /// <summary>
@@ -208,36 +208,36 @@ namespace Magicodes.Logger.NLog
         /// </summary>
         /// <param name="loggerLevels">日志级别</param>
         /// <param name="formatProvider">格式化提供程序</param>
-        /// <param name="format">格式化字符串</param>
+        /// <param name="message">格式化字符串</param>
         /// <param name="exception">异常信息</param>
         /// <param name="args">参数</param>
-        public override void LogFormat(LoggerLevels loggerLevels, IFormatProvider formatProvider, string format,
+        public override void LogFormat(LoggerLevels loggerLevels, IFormatProvider formatProvider, string message,
             Exception exception, params object[] args)
         {
             switch (loggerLevels)
             {
                 case LoggerLevels.Trace:
-                    _logger.Trace(exception, formatProvider, format, args);
+                    _logger.Trace(exception, formatProvider, message, args);
                     break;
                 case LoggerLevels.Debug:
-                    _logger.Debug(exception, formatProvider, format, args);
+                    _logger.Debug(exception, formatProvider, message, args);
                     break;
                 case LoggerLevels.Info:
-                    _logger.Info(exception, formatProvider, format, args);
+                    _logger.Info(exception, formatProvider, message, args);
                     break;
                 case LoggerLevels.Warn:
-                    _logger.Warn(exception, formatProvider, format, args);
+                    _logger.Warn(exception, formatProvider, message, args);
                     break;
                 case LoggerLevels.Error:
-                    _logger.Error(exception, formatProvider, format, args);
+                    _logger.Error(exception, formatProvider, message, args);
                     break;
                 case LoggerLevels.Fatal:
-                    _logger.Fatal(exception, formatProvider, format, args);
+                    _logger.Fatal(exception, formatProvider, message, args);
                     break;
                 default:
                     break;
             }
-            ExcutedOnLog(loggerLevels, string.Format(formatProvider, format, args), exception);
+            ExcutedOnLog(loggerLevels, message, args: args, ex: exception);
         }
     }
 }

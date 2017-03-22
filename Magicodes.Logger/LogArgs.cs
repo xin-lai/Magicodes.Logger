@@ -22,5 +22,6 @@ namespace Magicodes.Logger
         public Exception Exception { get; set; }
         public LoggerLevels LoggerLevels { get; set; }
         public object Message { get; set; }
+        public object[] Args { get; set; }
     }
 }

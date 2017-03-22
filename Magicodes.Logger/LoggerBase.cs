@@ -49,14 +49,15 @@ namespace Magicodes.Logger
         /// <param name="loggerLevels">日志等级</param>
         /// <param name="message">日志消息</param>
         /// <param name="ex">异常信息</param>
-        protected void ExcutedOnLog(LoggerLevels loggerLevels, object message, Exception ex = null)
+        protected void ExcutedOnLog(LoggerLevels loggerLevels, object message, Exception ex = null, params object[] args)
         {
             if (OnLog == null) return;
             var e = new LogEventArgs
             {
                 Exception = ex,
                 LoggerLevels = loggerLevels,
-                Message = message
+                Message = message,
+                Args = args
             };
             OnLog(null, e);
         }
